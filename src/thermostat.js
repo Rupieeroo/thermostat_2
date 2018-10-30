@@ -43,3 +43,13 @@ Thermostat.prototype._maximumTemp = function() {
 Thermostat.prototype.powerSaving = function() {
   this.isPowerSaving = !this.isPowerSaving;
 };
+
+Thermostat.prototype.energyUsage = function() {
+  if (this._temperature < 18) {
+    return 'low-usage';
+  } else if (this._temperature < 25 ) {
+    return 'medium-usage';
+  } else {
+    return 'high-usage';
+  }
+};
