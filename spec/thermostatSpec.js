@@ -16,6 +16,11 @@ describe("thermostat", function() {
       thermostat.down(5);
       expect(thermostat.temperature()).toEqual(20);
     });
+
+    it('does not fall below 10oC', function() {
+      thermostat.down(15);
+      expect(thermostat.temperature()).toEqual(10);
+    });
   });
 
 });
