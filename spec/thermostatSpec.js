@@ -2,17 +2,17 @@ describe("thermostat", function() {
 
   var thermostat = new Thermostat
 
-  describe("temperature", function() {
+  describe("Temperature", function() {
     it('starts at 20oC', function() {
       expect(thermostat.temperature()).toEqual(20);
     });
 
-    it('increases the temperature from 20 to 25', function() {
+    it('increases the temperature from 20oC to 25oC', function() {
       thermostat.up(5);
       expect(thermostat.temperature()).toEqual(25);
     });
 
-    it('decreases the temperature from 25 to 20', function() {
+    it('decreases the temperature from 25oC to 20oC', function() {
       thermostat.down(5);
       expect(thermostat.temperature()).toEqual(20);
     });
@@ -40,4 +40,10 @@ describe("thermostat", function() {
     });
   });
 
+  describe('Reset', function() {
+    it('Resets the temperature to 20oC', function() {
+      thermostat.reset();
+      expect(thermostat.temperature()).toEqual(20);
+    });
+  });
 });
