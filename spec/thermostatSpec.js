@@ -1,4 +1,4 @@
-describe("thermostat", function() {
+describe("Thermostat", function() {
 
   var thermostat = new Thermostat
 
@@ -23,17 +23,17 @@ describe("thermostat", function() {
     });
   });
 
-  describe("Power save", function() {
-    it('powerSaving is on by default', function() {
+  describe("Power saving", function() {
+    it('is on by default', function() {
       expect(thermostat["isPowerSaving"]).toBe(true);
     });
 
-    it('Sets maximum temperature to 25oC when powersave is on', function() {
+    it('sets maximum temperature to 25oC when powersave is on', function() {
       thermostat.up(20);
       expect(thermostat.temperature()).toEqual(25);
     });
 
-    it('Sets a maximum temperature to 32oC when powersave is off', function() {
+    it('sets a maximum temperature to 32oC when powersave is off', function() {
       thermostat.powerSaving();
       thermostat.up(10);
       expect(thermostat.temperature()).toEqual(32);
@@ -41,7 +41,7 @@ describe("thermostat", function() {
   });
 
   describe('Reset', function() {
-    it('Resets the temperature to 20oC', function() {
+    it('resets the temperature to 20oC', function() {
       thermostat.reset();
       expect(thermostat.temperature()).toEqual(20);
     });
