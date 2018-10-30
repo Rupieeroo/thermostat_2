@@ -29,6 +29,12 @@ describe("thermostat", function() {
       thermostat.up(20);
       expect(thermostat.temperature()).toEqual(25);
     });
+
+    it('Sets a maximum temperature to 32oC when powersave is off', function() {
+      thermostat.powerSaving();
+      thermostat.up(10);
+      expect(thermostat.temperature()).toEqual(32);
+    });
   });
 
 });

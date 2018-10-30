@@ -26,6 +26,8 @@ Thermostat.prototype._minimumTemp = function() {
 Thermostat.prototype._maximumTemp = function() {
   if (this.isPowerSaving === true && this._temperature > 25) {
     this._temperature = 25;
+  } else if (this.isPowerSaving === false && this._temperature > 32) {
+    this._temperature = 32;
   }
 };
 
