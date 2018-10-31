@@ -52,11 +52,11 @@ describe("Thermostat", function() {
       thermostat.down(3);
       expect(thermostat.energyUsage()).toEqual('low-usage');
     });
-    it('displays medium-usage when temperature is less than 18oC', function() {
+    it('displays medium-usage when temperature is more than 18oC and less than 25oC', function() {
       thermostat.reset();
       expect(thermostat.energyUsage()).toEqual('medium-usage');
     });
-    it('displays high-usage when temperature is less than 18oC', function() {
+    it('displays high-usage when temperature is more than 25oC', function() {
       thermostat.up(6);
       expect(thermostat.energyUsage()).toEqual('high-usage');
     });
