@@ -12,11 +12,13 @@ Thermostat.prototype.reset = function() {
 };
 
 Thermostat.prototype.temperature = function() {
+  console.log(this._temperature);
   return this._temperature;
 };
 
 Thermostat.prototype.up = function(number) {
   this._temperature += number;
+  console.log(this._temperature);
   this._maximumTemp();
 };
 
